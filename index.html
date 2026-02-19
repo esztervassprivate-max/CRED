@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRED — Sports Sponsorship Command Center</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================
+     PAGE 1: LOGIN
+     ============================================ -->
+<div id="login" class="page">
+  <div class="login-card">
+    <img src="assets/logo.jpeg" alt="CRED">
+    <h2>Welcome back</h2>
+    <p>Sign in to your CRED account</p>
+    <form onsubmit="return false">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+      <button class="btn btn-primary" id="loginBtn">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================
+     PAGE 2: TUTORIAL
+     ============================================ -->
+<div id="tutorial" class="page">
+  <div class="tutorial-container">
+    <div class="tutorial-slide active">
+      <img src="assets/tutorial1.png" alt="Tutorial Step 1">
+    </div>
+    <div class="tutorial-slide">
+      <img src="assets/tutorial2.png" alt="Tutorial Step 2">
+    </div>
+    <div class="tutorial-slide">
+      <img src="assets/tutorial3.png" alt="Tutorial Step 3">
+    </div>
+    <div class="tutorial-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <div class="tutorial-actions">
+      <button class="btn btn-secondary" id="tutorialSkip">Skip</button>
+      <button class="btn btn-primary" id="tutorialNext">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     PAGE 3: DASHBOARD
+     ============================================ -->
+<div id="dashboard" class="page">
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <img src="assets/logo.jpeg" alt="CRED" class="sidebar-logo">
+      <div class="sidebar-nav">
+        <div class="sidebar-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <span class="tooltip">Dashboard</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="tooltip">Companies</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="tooltip">People</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span class="tooltip">Deals</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span class="tooltip">Opportunities</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span class="tooltip">Inbox</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span class="tooltip">Tasks</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span class="tooltip">Notes</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span class="tooltip">News</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span class="tooltip">Reports</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-area">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <h1>Overview</h1>
+        </div>
+        <div class="header-right">
+          <div class="header-icon notif-trigger">
+            <span class="notif-dot"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <div class="notif-popover">
+              <div class="notif-popover-header">Notifications</div>
+              <div class="notif-item">
+                <div class="notif-avatar">JL</div>
+                <div class="notif-body">
+                  <div class="notif-name">James Liu</div>
+                  <div class="notif-message">The Emirates proposal is waiting for your review</div>
+                  <div class="notif-time">2 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="header-avatar">EV</div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="content">
+        <!-- Search & Create Bar -->
+        <div class="search-create-bar">
+          <div class="search-input-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="Search opportunities, companies, people...">
+          </div>
+          <button class="btn btn-primary" id="createBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Create
+          </button>
+        </div>
+
+        <!-- Widgets Row -->
+        <div class="widgets-row">
+          <!-- Deal Pipeline -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Deal Pipeline
+              </h3>
+              <a>View More</a>
+            </div>
+            <div class="widget-body" id="pipelineBody"></div>
+          </div>
+
+          <!-- Latest Deals -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Latest Deals
+              </h3>
+              <a>View More</a>
+            </div>
+            <div class="widget-body" id="latestBody"></div>
+          </div>
+
+          <!-- Placeholder Widget -->
+          <div class="widget">
+            <div class="widget-placeholder">
+              <div class="placeholder-plus">+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     PAGE 4: CREATION WIZARD
+     ============================================ -->
+<div id="wizard" class="page">
+  <div class="wizard-header">
+    <h2 id="wizardTitle">Create New Record</h2>
+    <button class="wizard-close" id="wizardCancel">&times;</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="wizard-progress">
+    <div class="wizard-step-indicator">
+      <span class="step-circle active">1</span>
+      <span class="step-label active">Type</span>
+    </div>
+    <div class="step-connector"></div>
+    <div class="wizard-step-indicator">
+      <span class="step-circle">2</span>
+      <span class="step-label">Details</span>
+    </div>
+    <div class="step-connector"></div>
+    <div class="wizard-step-indicator">
+      <span class="step-circle">3</span>
+      <span class="step-label">Context</span>
+    </div>
+    <div class="step-connector"></div>
+    <div class="wizard-step-indicator">
+      <span class="step-circle">4</span>
+      <span class="step-label">Review</span>
+    </div>
+  </div>
+
+  <!-- Wizard Body -->
+  <div class="wizard-body">
+    <div class="wizard-form">
+      <!-- Step 0: Record Type -->
+      <div class="wizard-step active">
+        <h3>What are you creating?</h3>
+        <div class="record-type-grid">
+          <label class="record-type-card selected">
+            <input type="radio" name="recordType" value="Opportunity" checked>
+            <div class="record-type-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="record-type-name">Opportunity</span>
+            <span class="record-type-desc">Track a sponsorship opportunity</span>
+          </label>
+          <label class="record-type-card">
+            <input type="radio" name="recordType" value="Company">
+            <div class="record-type-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <span class="record-type-name">Company</span>
+            <span class="record-type-desc">Add a new organisation</span>
+          </label>
+          <label class="record-type-card">
+            <input type="radio" name="recordType" value="Contact">
+            <div class="record-type-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="record-type-name">Contact</span>
+            <span class="record-type-desc">Add a new contact person</span>
+          </label>
+          <label class="record-type-card">
+            <input type="radio" name="recordType" value="Deal">
+            <div class="record-type-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="record-type-name">Deal</span>
+            <span class="record-type-desc">Record a new deal</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Step 1: Opportunity Details -->
+      <div class="wizard-step">
+        <h3>Opportunity Details</h3>
+        <div class="form-group">
+          <label for="wizOrgName">Company Name</label>
+          <input type="text" id="wizOrgName" placeholder="e.g. Red Bull Racing">
+        </div>
+        <div class="form-group">
+          <label for="wizDealType">Deal Type</label>
+          <select id="wizDealType">
+            <option>Title Sponsorship</option>
+            <option>Kit Sponsorship</option>
+            <option>Stadium Naming</option>
+            <option>Technology Partnership</option>
+            <option>Event Sponsorship</option>
+            <option>Hospitality Sponsorship</option>
+            <option>Apparel Partnership</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wizDealSize">Deal Size</label>
+          <input type="text" id="wizDealSize" placeholder="e.g. $1.5M">
+        </div>
+        <div class="form-group">
+          <label for="wizProbability">Probability</label>
+          <div class="probability-input-wrapper">
+            <input type="number" id="wizProbability" min="0" max="100" placeholder="e.g. 75" value="50">
+            <span class="probability-suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Context & Contact -->
+      <div class="wizard-step">
+        <h3>Context & Contact</h3>
+        <div class="form-group">
+          <label for="wizStage">Stage</label>
+          <select id="wizStage">
+            <option>Contacted</option>
+            <option>First Meeting</option>
+            <option>Qualify</option>
+            <option>Offer</option>
+            <option>Negotiation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wizContact">Contact Person</label>
+          <div class="contact-autocomplete">
+            <input type="text" id="wizContact" placeholder="Start typing to search contacts..." autocomplete="off">
+            <div class="contact-dropdown" id="contactDropdown"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="wizAssignee">Assignee</label>
+          <input type="text" id="wizAssignee" value="Eszter Vass">
+        </div>
+        <div class="form-group">
+          <label for="wizNotes">Notes</label>
+          <textarea id="wizNotes" placeholder="Add any relevant notes about this opportunity..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Attachments <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+          <div class="file-upload-zone" id="wizFileZone">
+            <input type="file" id="wizFileInput" multiple style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;color:var(--text-muted)"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span class="file-upload-text">Click to upload or drag & drop</span>
+            <span class="file-upload-hint">PDF, DOCX, XLSX, images up to 10MB</span>
+          </div>
+          <div id="wizFileList" class="file-list"></div>
+        </div>
+      </div>
+
+      <!-- Step 3: Review -->
+      <div class="wizard-step">
+        <h3>Review & Confirm</h3>
+        <div class="review-grid">
+          <span class="review-label">Record Type</span>
+          <span class="review-value" id="revRecordType">—</span>
+          <span class="review-label">Company</span>
+          <span class="review-value" id="revOrg">—</span>
+          <span class="review-label">Deal Type</span>
+          <span class="review-value" id="revType">—</span>
+          <span class="review-label">Deal Size</span>
+          <span class="review-value" id="revSize">—</span>
+          <span class="review-label">Probability</span>
+          <span class="review-value" id="revProbability">—</span>
+          <span class="review-label">Stage</span>
+          <span class="review-value" id="revStage">—</span>
+          <span class="review-label">Contact</span>
+          <span class="review-value" id="revContact">—</span>
+          <span class="review-label">Assignee</span>
+          <span class="review-value" id="revAssignee">—</span>
+          <span class="review-label">Notes</span>
+          <span class="review-value" id="revNotes">—</span>
+          <span class="review-label">Attachments</span>
+          <span class="review-value" id="revAttachments">None</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wizard-footer">
+    <button class="btn btn-secondary" id="wizardBack" style="visibility:hidden">Back</button>
+    <button class="btn btn-primary" id="wizardNext">Next</button>
+  </div>
+</div>
+
+<!-- ============================================
+     PAGE 5: DETAIL VIEW
+     ============================================ -->
+<div id="detail" class="page">
+  <div class="app-layout">
+    <!-- Sidebar (same as dashboard) -->
+    <nav class="sidebar">
+      <img src="assets/logo.jpeg" alt="CRED" class="sidebar-logo">
+      <div class="sidebar-nav">
+        <div class="sidebar-item" onclick="navigate('#dashboard')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <span class="tooltip">Dashboard</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="tooltip">Companies</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="tooltip">People</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span class="tooltip">Deals</span>
+        </div>
+        <div class="sidebar-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span class="tooltip">Opportunities</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span class="tooltip">Inbox</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span class="tooltip">Tasks</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span class="tooltip">Notes</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span class="tooltip">News</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span class="tooltip">Reports</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-area">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <h1>Opportunity Details</h1>
+        </div>
+        <div class="header-right">
+          <div class="header-icon notif-trigger">
+            <span class="notif-dot"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <div class="notif-popover">
+              <div class="notif-popover-header">Notifications</div>
+              <div class="notif-item">
+                <div class="notif-avatar">JL</div>
+                <div class="notif-body">
+                  <div class="notif-name">James Liu</div>
+                  <div class="notif-message">The Emirates proposal is waiting for your review</div>
+                  <div class="notif-time">2 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="header-avatar">EV</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="detail-page">
+          <a class="detail-back" onclick="navigate('#dashboard')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Dashboard
+          </a>
+
+          <div class="detail-header-section">
+            <div class="detail-avatar" id="detailAvatar"></div>
+            <div class="detail-header-info">
+              <h2 id="detailOrg">—</h2>
+              <span class="detail-stage" id="detailStage">—</span>
+            </div>
+            <div class="detail-actions">
+              <button class="btn btn-secondary btn-sm" id="btnEditOpp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                Edit
+              </button>
+              <button class="btn btn-secondary btn-sm" id="btnSendMsg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Send Message
+              </button>
+              <button class="btn btn-secondary btn-sm" id="btnUpload">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Upload
+              </button>
+              <button class="btn btn-secondary btn-sm" id="btnReminder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Set Reminder
+              </button>
+              <input type="file" id="detailFileUpload" style="display:none" multiple>
+            </div>
+          </div>
+
+          <!-- Opportunity Info is now inside the widget grid -->
+
+          <!-- Widget Grid: 3 columns -->
+          <div class="detail-widgets">
+            <!-- Row 1: Opportunity Info (2-wide) + Contact Profile (1-wide) -->
+            <div class="detail-card dw-card dw-span2" style="margin-bottom:0">
+              <h3>Opportunity Information</h3>
+              <div class="detail-grid">
+                <div class="detail-field">
+                  <label>Deal Size</label>
+                  <span id="detailDealSize2">—</span>
+                </div>
+                <div class="detail-field">
+                  <label>Deal Type</label>
+                  <span id="detailType2">—</span>
+                </div>
+                <div class="detail-field">
+                  <label>Stage</label>
+                  <span id="detailStageFull2">—</span>
+                </div>
+                <div class="detail-field">
+                  <label>Probability</label>
+                  <span id="detailProbability2">—</span>
+                </div>
+                <div class="detail-field">
+                  <label>Activity</label>
+                  <span id="detailHeat2">—</span>
+                </div>
+                <div class="detail-field">
+                  <label>Assignee</label>
+                  <span id="detailAssignee2">—</span>
+                </div>
+                <div class="detail-notes">
+                  <label>Notes</label>
+                  <p id="detailNotes2">—</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-card dw-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Contact Profile
+                <button class="widget-action-btn" id="btnAddContact">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Contact
+                </button>
+              </h3>
+              <div id="contactProfileWidget" class="contact-profile"></div>
+            </div>
+
+            <!-- Row 2: Importance, Deal Type Distribution, Recent Activity -->
+            <div class="detail-card dw-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                Opportunity Importance
+              </h3>
+              <div id="importanceChart" class="importance-chart"></div>
+            </div>
+
+            <div class="detail-card dw-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+                Deal Type Distribution
+              </h3>
+              <div id="dealTypeChart" class="deal-type-chart"></div>
+            </div>
+
+            <div class="detail-card dw-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Recent Activity
+                <span class="activity-heat-badge" id="activityBadge">Hot</span>
+              </h3>
+              <div id="activityTimeline" class="activity-timeline"></div>
+            </div>
+
+            <!-- Row 3: Company News, Messages, Documents -->
+            <div class="detail-card dw-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Company News
+              </h3>
+              <div id="companyNewsWidget" class="company-news-list"></div>
+            </div>
+
+            <div class="detail-card dw-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Messages
+                <button class="widget-action-btn" id="btnWidgetSendMsg">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  Send Message
+                </button>
+              </h3>
+              <div id="messagesWidget" class="empty-widget-state">
+                <div class="empty-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="empty-text">No messages yet</div>
+                <div class="empty-subtext">Messages about this opportunity will appear here</div>
+              </div>
+            </div>
+
+            <div class="detail-card dw-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Documents
+                <button class="widget-action-btn" id="btnWidgetUpload">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  Upload Document
+                </button>
+              </h3>
+              <div id="documentsWidget"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     WIDGET LIBRARY MODAL
+     ============================================ -->
+<div class="widget-library-overlay" id="widgetLibraryOverlay">
+  <div class="widget-library-modal">
+    <div class="wl-header">
+      <h2>Widget Library</h2>
+      <button class="wizard-close" id="wlClose">&times;</button>
+    </div>
+    <div class="wl-body">
+      <button class="wl-arrow wl-arrow-left" id="wlPrev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="wl-carousel-viewport">
+        <div class="wl-carousel-track" id="wlTrack">
+
+          <!-- Slide 1: Favorite Contacts -->
+          <div class="wl-slide" data-widget="contacts">
+            <div class="wl-preview">
+              <div class="wl-preview-header">Favorite Contacts</div>
+              <div class="wl-preview-contacts" id="wlPreviewContacts"></div>
+            </div>
+            <div class="wl-slide-info">
+              <h3>Favorite Contacts</h3>
+              <p>Quick access to your key contacts across all deals.</p>
+              <button class="btn btn-primary wl-add-btn" data-widget="contacts">Add to Dashboard</button>
+            </div>
+          </div>
+
+          <!-- Slide 2: Favorite Companies -->
+          <div class="wl-slide" data-widget="companies">
+            <div class="wl-preview">
+              <div class="wl-preview-header">Favorite Companies</div>
+              <div class="wl-preview-companies" id="wlPreviewCompanies"></div>
+            </div>
+            <div class="wl-slide-info">
+              <h3>Favorite Companies</h3>
+              <p>Monitor your most important partner organisations at a glance.</p>
+              <button class="btn btn-primary wl-add-btn" data-widget="companies">Add to Dashboard</button>
+            </div>
+          </div>
+
+          <!-- Slide 3: Expiring Deals -->
+          <div class="wl-slide" data-widget="expiring">
+            <div class="wl-preview">
+              <div class="wl-preview-header">Expiring Deals</div>
+              <div class="wl-preview-expiring" id="wlPreviewExpiring"></div>
+            </div>
+            <div class="wl-slide-info">
+              <h3>Expiring Deals</h3>
+              <p>Stay ahead of renewal deadlines and expiring agreements.</p>
+              <button class="btn btn-primary wl-add-btn" data-widget="expiring">Add to Dashboard</button>
+            </div>
+          </div>
+
+          <!-- Slide 4: Upgrade CTA -->
+          <div class="wl-slide" data-widget="upgrade">
+            <div class="wl-preview wl-preview-upgrade">
+              <div class="wl-upgrade-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3>Unlock More Widgets</h3>
+              <p>Upgrade to Professional package to access even more features!</p>
+              <a href="https://credplatform.com" target="_blank" rel="noopener" class="btn btn-primary wl-upgrade-btn">Upgrade</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="wl-arrow wl-arrow-right" id="wlNext">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="wl-dots" id="wlDots">
+      <span class="wl-dot active"></span>
+      <span class="wl-dot"></span>
+      <span class="wl-dot"></span>
+      <span class="wl-dot"></span>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
